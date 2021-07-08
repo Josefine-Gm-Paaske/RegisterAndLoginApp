@@ -19,13 +19,26 @@ namespace RegisterAndLogin.Controllers
         {
             SercurityService securityService = new SercurityService();
 
-            if(securityService.IsValid(userModel))
+            if (securityService.IsValid(userModel))
             {
                 return View("LoginSucces", userModel);
             }
             else
             {
                 return View("LoginFailed", userModel);
+            }
+        }
+
+        public IActionResult CreateNewAccount(UserModel userModel)
+        {
+            UsersDAO usersDAO = new UsersDAO();
+            if (usersDAO.AddUser(userModel))
+            {
+                return View("UserIsAdded", userModel);
+            }
+            else
+            {
+                return View("UserNotAdded", userModel);
             }
         }
     }
