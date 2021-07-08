@@ -1,8 +1,8 @@
 ﻿use TestDatabase
 
-insert into dbo.users (USERNAME, PASSWORD) VALUES ('Josse', 'Password1!')
+insert into dbo.users (USERNAME, PASSWORD) VALUES ('Bella_Olivia', 'TestPassword!')
 
 --Delete Users
-delete Users where USERNAME = 'Josse'
+delete Users where USERNAME = ''
 
 select * from dbo.Users
